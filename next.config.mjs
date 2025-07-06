@@ -5,15 +5,15 @@ import remarkGfm from 'remark-gfm'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
-  // output: 'export',
+  output: 'export',
   images: {
     unoptimized: true, // required for export if using <Image>
   },
   trailingSlash: true, // optional, helps with GitHub Pages routing
   experimental: {
-    outputFileTracingIncludes: {
-      '/articles/*': ['./src/app/articles/**/*.mdx'],
-    },
+    // outputFileTracingIncludes: {
+    //   '/articles/*': ['./src/app/articles/**/*.mdx'],
+    // },
   },
 }
 

@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   },
   description:
     'StarShade Casting is a forward-thinking casting company founded by Sahaj Bhadoria and Nitin Mahesh Joshi, two passionate professionals dedicated to reshaping the casting landscape of Indian entertainment. The duo first crossed paths while working at the renowned Casting Bay, where they quickly discovered a shared set of values — honesty in work, respect for talent, and a deep commitment to storytelling.',
-  alternates: {
-    types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
-    },
-  },
+  // alternates: {
+  //   types: {
+  //     'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
+  //   },
+  // },
 }
 
 export default function RootLayout({
