@@ -20,9 +20,9 @@ coverage/
 .DS_Store
 Thumbs.db
 
-# Env files
-.env*
-!.env.example
+# # Env files
+# .env*
+# !.env.example
 
 # Editor-specific
 .vscode/
