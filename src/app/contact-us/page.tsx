@@ -69,7 +69,7 @@ function SocialLink({
 export default function Uses() {
   return (
     <SimpleLayout
-      title="Contact Us"
+      title="Contact Us" 
       intro="We would love to hear from you! Whether you have questions, feedback, or just want to say hello, feel free to reach out to us. Our team is here to assist you with anything you need."
     >
       <div className="mx-auto max-w-7xl">
