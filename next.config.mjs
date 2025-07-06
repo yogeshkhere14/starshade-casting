@@ -1,28 +1,21 @@
-// import rehypePrism from '@mapbox/rehype-prism'
-// import nextMDX from '@next/mdx'
-// import remarkGfm from 'remark-gfm'
+import withMDX from '@next/mdx';
+import remarkGfm from 'remark-gfm';
+import rehypePrism from 'rehype-prism-plus';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   output: 'export',
   images: {
-    unoptimized: true, // required for export if using <Image>
+    unoptimized: true,
   },
-  trailingSlash: true, // optional, helps with GitHub Pages routing
-  experimental: {
-    // outputFileTracingIncludes: {
-    //   '/articles/*': ['./src/app/articles/**/*.mdx'],
-    // },
+  trailingSlash: true,
+};
+
+export default withMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypePrism],
   },
-}
-
-// const withMDX = nextMDX({
-//   extension: /\.mdx?$/,
-//   options: {
-//     remarkPlugins: [remarkGfm],
-//     rehypePlugins: [rehypePrism],
-//   },
-// })
-
-// export default withMDX(nextConfig)
+})(nextConfig);
