@@ -2,7 +2,7 @@ name: Deploy Next.js site to GitHub Pages
 
 on:
   push:
-    branches: ["Master"]  # Make sure your default branch is 'main'
+    branches: ["main"]  # ✅ Make sure this matches your actual default branch
   workflow_dispatch:
 
 permissions:
@@ -30,15 +30,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Export static site with Next.js
-        run: |
-          npm run build
-          npm run export
+      - name: Build static site with Next.js
+        run: npm run build  # ✅ ONLY build, no export step
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./out  # ✅ `out` is auto-created by `output: 'export'`
 
   deploy:
     environment:
